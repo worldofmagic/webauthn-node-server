@@ -2,7 +2,7 @@ var { MongoClient, ServerApiVersion } = require('mongodb');
 var dotenv = require('dotenv');
 var uuid = require('uuid');
 
-dotenv.config();
+dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 const mongodbURL = process.env.DB_URL;
 const dbName = process.env.DB_NAME;
 const authenticatorCollection = process.env.AUTHENTICATOR_COLLECTION;

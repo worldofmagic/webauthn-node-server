@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 var dotenv = require('dotenv');
 
-dotenv.config();
+dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 
 const secret = process.env.JWT_SECRET;
 
